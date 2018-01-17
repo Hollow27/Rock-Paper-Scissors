@@ -35,6 +35,35 @@ function playRound() {
     content.textContent = 'tie';
     h4.textContent = 'Player: ${humanScore} Computer: ${computerScore}';
   }
+  else if (human == "rock" && computer == "scissors") {
+    content.textContent = 'You win, rock beats scissors!';
+    humanScore += 1;
+    h4.textContent = 'Player: ${humanScore} Computer: ${computerScore}';
+  }
+  else if (human == "paper" && computer == "rock") {
+    content.textContent = 'You win, paper beats rock!';
+    humanScore += 1;
+    h4.textContent = 'Player: ${humanScore} Computer: ${computerScore}';
+  }
+  else if (human == "scissors" && computer == "paper") {
+    content.textContent = 'You win, scissors beats paper!';
+    humanScore += 1;
+    h4.textContent = 'Player: ${humanScore} Computer: ${computerScore}';
+  }
+  else {
+    content.textContent = 'You lose, ${computer} beats ${human}!';
+    computerScore += 1;
+    h4.textContent = 'Player: ${humanScore} Computer: ${computerScore}';
+  }
+  if (computerScore == 5){
+    h4.textContent = 'Player: ${humanScore} Computer: ${computerScore}';
+    h2.textContent = 'Computer wins!';
+
+  }
+  else if (humanScore == 5){
+    h4.textContent = 'Player: ${humanScore} Computer: ${computerScore}';
+    h2.textContent = 'You win!';
+  }
 }
 
 function game() {
