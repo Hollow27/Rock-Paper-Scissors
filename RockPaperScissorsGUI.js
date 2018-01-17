@@ -23,7 +23,18 @@ function computerChoice() {
 }
 
 function playRound() {
+  const content = document.querySelector('p');
 
+  if (computerScore == 5){
+    return;
+  }
+  else if (humanScore == 5){
+    return;
+  }
+  else if (human === computer) {
+    content.textContent = 'tie';
+    h4.textContent = 'Player: ${humanScore} Computer: ${computerScore}';
+  }
 }
 
 function game() {
