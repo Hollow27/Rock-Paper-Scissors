@@ -1,3 +1,5 @@
+// Rock Paper Scissors GUI
+
 let computerScore = 0;
 let humanScore = 0;
 
@@ -22,7 +24,7 @@ function computerChoice() {
   return choices[Math.floor(Math.random() * choices.length)];
 }
 
-function playRound() {
+function playRound(human, computer) {
   const content = document.querySelector('p');
 
   if (computerScore == 5){
@@ -67,9 +69,19 @@ function playRound() {
 }
 
 function game() {
-
+  document.getElementById('start').id = 'two';
+  h4.textContent = 'Player: ${humanScore} Computer: ${computerScore}';
+  const buttons = document.querySelectorAll('.button');
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      playRound(button.id, computerChoice())
+    });
+  });
 }
 
 function startGame() {
-
+  document.querySelector('#start').addEventListener('click', game);
 }
+
+buttonReset();
+startGame();
