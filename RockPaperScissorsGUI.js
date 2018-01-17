@@ -14,11 +14,12 @@ function reset() {
 }
 
 function buttonReset() {
-
+  document.querySelector('#reset').addEventListener('click', reset);
 }
 
 function computerChoice() {
-
+  let choices = ["rock", "paper", "scissors"];
+  return choices[Math.floor(Math.random() * choices.length)];
 }
 
 function playRound() {
